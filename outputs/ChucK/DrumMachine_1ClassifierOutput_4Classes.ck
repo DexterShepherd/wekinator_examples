@@ -92,7 +92,7 @@ recv.event( "/wek/outputs, f" ) @=> OscEvent oe;
     fun void drum1() {
         // construct the patch
         SndBuf buf => Gain g => e1;
-        "data/kick.wav" => buf.read;
+        me.dir() + "data/kick.wav" => buf.read;
         .5 => g.gain;
         
         // time loop
@@ -107,7 +107,7 @@ recv.event( "/wek/outputs, f" ) @=> OscEvent oe;
     fun void drum2() {
         // construct the patch
         SndBuf buf => Gain g => e2;
-        "data/hihat.wav" => buf.read;
+        me.dir() + "data/hihat.wav" => buf.read;
         .25 => g.gain;
         
         // time loop
@@ -132,7 +132,7 @@ recv.event( "/wek/outputs, f" ) @=> OscEvent oe;
     fun void drum3() {
         // construct the patch
         SndBuf buf => Gain g => e2;
-        "data/hihat-open.wav" => buf.read;
+        me.dir() + "data/hihat-open.wav" => buf.read;
         .5 => g.gain;
         
         // time loop
@@ -192,7 +192,7 @@ fun void melody2() {
 fun void funtimes() {
     // construct the patch
     SndBuf buf => Gain g => JCRev r => e4;
-    "data/snare.wav" => buf.read;
+    me.dir() + "data/snare.wav" => buf.read;
     .5 => g.gain;
     .05 => r.mix;
     
